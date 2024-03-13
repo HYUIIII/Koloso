@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+	<style>
+        button {
+            background-color: #007bff; /* Синий цвет */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная страница</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+         <h1>Главная страница</h1>
+         <p>Наши профессиональные инструкторы помогут вам освоить основы верховой езды или совершенствовать свои навыки, чтобы вы могли наслаждаться каждым моментом на спине лошади. Мы предлагаем индивидуальные занятия, групповые занятия, тренировки по конкуру и выездки на природу.</p>
+		 <div class="image-container">
+        <img id="image" src="image1.jpg" alt="Image 1">
+
+        <div>
+            <button onclick="changeImage('prev')">Предыдущая</button>
+            <button onclick="changeImage('next')">Следующая</button>
+        </div>
+    </div>
+
+    <script>
+        const images = ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg']; // Путь к изображениям
+        let currentIndex = 0;
+        const totalImages = images.length;
+        const imageElement = document.getElementById('image');
+
+        function changeImage(direction) {
+            if (direction === 'next') {
+                currentIndex = (currentIndex + 1) % totalImages;
+            } else {
+                currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+            }
+
+            imageElement.src = images[currentIndex];
+        }
+    </script>
+		 <p>Кроме того, у нас есть возможность аренды лошадей для приятных прогулок или походов по живописным местам. Наши лошади хорошо обучены, здоровы и преданы своим всадникам. Мы также предлагаем услуги по уходу за лошадьми, различные конные мероприятия и соревнования.</p>
+		 <p>Конный клуб "Грация" - это не только место для занятий верховой ездой, но и уютное общение с единомышленниками, возможность познакомиться с удивительными животными и насладиться красотой природы. Мы ценим каждого нашего клиента и стремимся сделать ваше время с нами незабываемым.</p>
+		 <p>Присоединяйтесь к нам сегодня и окунитесь в мир грации, элегантности и красоты верховой езды! Начните свое приключение прямо сейчас в конном клубе "Грация".</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Мой веб-сайт. все права защищены.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<TITLE>Новое письмо</TITLE>
+<STYLE>
+input, textarea {
+border-right: #339933 2px solid;
+border-top: #339933 2px solid;
+border-left: #339933 2px solid;
+border-bottom: #339933 2px solid;
+font-size: 10pt;
+font-family: Comic Sans MS;
+font-weight: bold;
+color: #c000c0;
+background-color: #ffffff;
+}
+email {width: 150px;}
+subj {width: 250px;}
+letter {
+width: 420px;
+59
+height: 120px;
+}
+send {
+background-color: #ddffee;
+color: #338833;
+}
+</STYLE>
+</HEAD>
+<BODY>
+<FORM NAME="newletter" METHOD="post" ACTION="sendmail.cgi">
+<TABLE>
+<TR>
+<TD>Кому:</TD>
+<TD><INPUT TYPE="text" NAME="email" CLASS="email"></TD>
+</TR>
+<TR>
+<TD>Тема:</TD>
+<TD><INPUT TYPE="text" NAME="subj" CLASS="subj"></TD>
+</TR>
+<TR>
+<TD colspan="2"><TEXTAREA NAME="letter"
+CLASS="letter"></TEXTAREA></TD>
+</TR>
+<TR>
+<TD colspan="2" align="right"><INPUT TYPE="submit"
+VALUE="Отослать" CLASS="send"></TD>
+</TR>
+</TABLE>
+</FORM>
+</BODY>
+</HTML>

@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<TITLE>Страница с персональными настройками</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function addCookie(szName,szValue,dtDaysExpires)
+{
+  var dtExpires = new Date();
+  dtExpires.setTime(dtExpires.getTime() + (dtDaysExpires*24*60*60*1000));
+  document.cookie = szName + "=" + escape(szValue) + "; expires=" + dtExpires.toGMTString();
+}
+function findCookie(szName)
+{
+  var arrCookies = document.cookie.split(';');
+  for (var i=0; i < arrCookies.length; i++)
+  {
+    var arrCrumb = arrCookies[i].split('=');
+    if (arrCrumb[0] == szName)
+    {
+      return unescape(arrCrumb[1]);
+    }
+  }
+  return "";
+}
+function Complete()
+{
+  addCookie("username", document.frm.username.value, 365);
+  window.location.reload();
+}
+// -->
+</SCRIPT>
+</HEAD>
+<BODY>
+<H3>Добрый день,
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var szUserName = findCookie("username");
+if (szUserName == "")
+{document.write("незнакомый посетитель"); }
+else
+{document.write(szUserName);};
+//-->
+</SCRIPT>
+</H3>
+<P><B>Укажите ваше имя</B>
+<FORM NAME="frm">
+<INPUT TYPE="text" NAME="username">
+<INPUT TYPE="button" VALUE="Ok" onClick="Complete();">
+</FORM>
+</BODY>
+</HTML>
